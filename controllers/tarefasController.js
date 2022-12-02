@@ -6,7 +6,7 @@ router.get('/tarefas/novo', async (req, res) => {
   res.render('tarefas/novo');
 });
 
-router.post('/tarefas/salvar',  (req, res) => {
+router.post('/tarefas/salvar', (req, res) => {
   const titulo = req.body.titulo;
   const materia = req.body.materia;
   const fechamento = req.body.fechamento;
@@ -17,7 +17,7 @@ router.post('/tarefas/salvar',  (req, res) => {
     materia: materia,
     fechamento: fechamento,
     status: status,
-  }).then( (tarefa) => {
+  }).then((tarefa) => {
     if (tarefa === undefined) {
       res.redirect('/');
     } else {
@@ -29,7 +29,7 @@ router.post('/tarefas/salvar',  (req, res) => {
 router.get('/tarefas', async (req, res) => {
   try {
     const tarefas = await Tarefas.findAll();
-    res.render('tarefas/index', {Tarefas: tarefas});
+    res.render('tarefas/index', { Tarefas: tarefas });
   } catch (error) {
     console.log(error);
   }
@@ -45,12 +45,16 @@ router.get('/tarefas/editar/:id', (req, res) => {
 router.post('/tarefas/alterar', (req, res) => {
   const id = req.body.id;
   const titulo = req.body.titulo;
+  const materia = req.body.materia;
   const status = req.body.status;
+  const fechamento = req.body.fechamento;
 
   Tarefas.update(
     {
       titulo: titulo,
       status: status,
+      fechamento: fechamento,
+      materia: materia,
     },
     {
       where: {

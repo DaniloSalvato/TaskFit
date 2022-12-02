@@ -1,37 +1,41 @@
 <%- include('../partials/head.ejs') %>
-<%- include('../partials/menu.ejs') %>
-<br>
-<div class="container">
-    <div class="card">
-        <div class="card-header">
-            Editar Tarefa
-        </div>
-        <div class="card-body">
-            <form method="post" action="/tarefas/alterar">
-                <input type="hidden" name="id" value="<%= tarefa.id %>">
-                <div class="form-floating mb-3">
-                    <input type="text" value="<%= tarefa.titulo %>" name="titulo" id="titulo" class="form-control" placeholder="Titulo" required>
-                    <label for="titulo">Titulo</label>
+    <%- include('../partials/menu.ejs') %>
+        <br>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    Editar Treino
                 </div>
-                <div class="form-floating mb-3">
-                    <input type="text" value="<%= tarefa.materia %>" name="materia" id="materia" class="form-control" placeholder="Matéria" required>
-                    <label for="status">Matéria</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="date"  value="<%= tarefa.fechamento %>" name="fechamento" id="fechamento" class="form-control" required>
-                    <label for="status">Fechamento</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" value="<%= tarefa.status %>" name="status" id="status" class="form-control" placeholder="Status" required>
-                    <label for="status">Status</label>
-                </div>
+                <div class="card-body">
+                    <form method="post" action="/tarefas/alterar">
+                        <input type="hidden" name="id" value="<%= tarefa.id %>">
+                        <div class="form-floating mb-3">
+                            <input type="text" value="<%= tarefa.titulo %>" name="titulo" id="titulo"
+                                class="form-control" placeholder="Titulo" required>
+                            <label for="titulo">Dia da Semana</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" value="<%= tarefa.materia %>" name="materia" id="materia"
+                                class="form-control" placeholder="Matéria" required>
+                            <label for="status">Treino</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="time" value="<%= tarefa.fechamento %>" name="fechamento" id="fechamento"
+                                class="form-control" required>
+                            <label for="status">Duração</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" value="<%= tarefa.status %>" name="status" id="status"
+                                class="form-control" placeholder="Status" required>
+                            <label for="status">Status</label>
+                        </div>
 
-                <div class="form-floating mb-3">
-                    <button type="submit" class="btn btn-primary">Alterar</button>
-                    <a href="/tarefas" class="btn btn-warning">Cancelar</a>
+                        <div class="form-floating mb-3">
+                            <button type="submit" class="btn btn-primary">Alterar</button>
+                            <a href="/tarefas" class="btn btn-warning">Cancelar</a>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
-</div>
-<%- include('../partials/footer.ejs') %>
+        <%- include('../partials/footer.ejs') %>

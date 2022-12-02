@@ -12,7 +12,7 @@ const Tarefas = connection.define('tarefa', {
     allowNull: false,
   },
   fechamento: {
-    type: Sequelize.DATEONLY,
+    type: Sequelize.TIME,
     allowNull: false,
   },
   status: {
@@ -21,6 +21,6 @@ const Tarefas = connection.define('tarefa', {
   },
 });
 
-// Tarefas.sync({ force: true });
+//Tarefas.sync({ force: true });
 
 module.exports = Tarefas;

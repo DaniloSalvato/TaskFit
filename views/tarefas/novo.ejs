@@ -1,35 +1,38 @@
 <%- include('../partials/head.ejs') %>
-<%- include('../partials/menu.ejs') %>
-<br>
-<div class="container">
-    <div class="card">
-        <div class="card-header">
-            Nova tarefa
+    <%- include('../partials/menu.ejs') %>
+        <br>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    Novo Treino
+                </div>
+                <div class="card-body">
+                    <form method="post" action="/tarefas/salvar">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Supinho"
+                                required>
+                            <label for="titulo">Dia da semana</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="materia" id="materia" class="form-control" placeholder="Matéria"
+                                required>
+                            <label for="materia">Treino</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="time" name="fechamento" id="fechamento" class="form-control" required>
+                            <label for="fechamento">Duração</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="status" id="status" class="form-control"
+                                placeholder="Aberto/fechado" required>
+                            <label for="status">Status</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                            <a href="/usuarios" class="btn btn-warning">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-            <form method="post" action="/tarefas/salvar">
-                <div class="form-floating mb-3">
-                    <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Supinho" required>
-                    <label for="titulo">Titulo</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="materia" id="materia" class="form-control" placeholder="Matéria" required>
-                    <label for="materia">Matéria</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="date" name="fechamento" id="fechamento" class="form-control" required>
-                    <label for="fechamento">Fechamento</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="status" id="status" class="form-control" placeholder="Aberto/fechado" required>
-                    <label for="status">Status</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
-                    <a href="/usuarios" class="btn btn-warning">Cancelar</a>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<%- include('../partials/footer.ejs') %>
+        <%- include('../partials/footer.ejs') %>
