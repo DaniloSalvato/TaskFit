@@ -1,0 +1,41 @@
+<%- include('./partials/head.ejs') %>
+    <%- include('./partials/menu.ejs') %>
+
+        <br>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    Nova tarefa
+                </div>
+                <div class="card-body">
+                    <form method="post" action="/tarefas/salvar">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Titulo"
+                                required>
+                            <label for="titulo">Titulo</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="materia" id="materia" class="form-control" placeholder="Materia"
+                                required>
+                            <label for="materia">Materia</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" name="fechamento" id="fechamento" class="form-control"
+                                placeholder="Fechamento" required>
+                            <label for="fechamento">Fechamento</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="status" id="status" class="form-control" placeholder="Status"
+                                required>
+                            <label for="status">Status</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                            <a href="/tarefas" class="btn btn-warning">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <%- include('./partials/footer.ejs') %>
